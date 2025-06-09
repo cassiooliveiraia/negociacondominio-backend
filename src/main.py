@@ -87,8 +87,9 @@ def create_app():
 
 if __name__ == '__main__':
     app = create_app()
-        # Criar usuário admin de demonstração, se não existir
-    from src.models.database import User
+    
+    # Criar usuário admin de demonstração, se não existir
+    from src.models.user import User  # ← Aqui está o import corrigido
     from werkzeug.security import generate_password_hash
 
     with app.app_context():
